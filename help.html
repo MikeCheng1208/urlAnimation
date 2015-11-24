@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Help</title>
+</head>
+
+<script>
+	var data=[
+		['救',500],
+		['救',800],
+		['我',1000],
+		['!',1000],
+		['救',700],
+		['救',500],
+		['我',1000],
+		['!',2000],
+		['救',600],
+		['救',300],
+		['我',300],
+		['!',300],
+		['你',300],
+		['這',300],
+		['個',300],
+		['大',300],
+		['笨',300],
+		['蛋',300],
+		['!',300]
+	]
+	function addurl(u){
+		var h = window.location.href
+		history.replaceState({},'',h+u)
+
+		var d = data.shift()
+		if(d) setTimeout(addurl,d[1],d[0])
+	}
+	addurl('/')
+</script>
+<body>
+	<h1>只能用電腦看到效果，手機不行</h1>
+</body>
+</html>
